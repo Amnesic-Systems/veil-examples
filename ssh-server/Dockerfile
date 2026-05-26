@@ -1,6 +1,6 @@
 # A Go base image is all we need to deterministically build a copy of veil.
 # We use a specific instead of the latest image to ensure reproducibility.
-FROM golang:1.23 as builder
+FROM golang:1.26 as builder
 
 WORKDIR /app
 
@@ -22,7 +22,7 @@ RUN echo -n 'root:root' | chpasswd
 
 # Copy all our files to the final image.
 COPY --from=builder \
-    /app/veil/cmd/veil/veil \
+    /app/veil/cmd/veil-daemon/veil-daemon \
     /app/start.sh /bin/
 
 CMD ["start.sh"]

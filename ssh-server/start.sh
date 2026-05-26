@@ -1,7 +1,7 @@
 #!/bin/sh
 
-veil &
-echo "[sh] Started veil."
+veil-daemon &
+echo "[sh] Started veil-daemon."
 
 ssh-keygen -A
 echo "[sh] Configured SSH server."

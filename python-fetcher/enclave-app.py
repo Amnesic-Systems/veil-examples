@@ -5,7 +5,7 @@ import urllib.request
 
 
 def signal_ready():
-    r = urllib.request.urlopen("http://127.0.0.1:8080/enclave/ready")
+    r = urllib.request.urlopen("http://127.0.0.1:8080/veil/ready")
     if r.getcode() != 200:
         raise Exception(
             "Expected status code %d but got %d"
